@@ -1,0 +1,13 @@
+
+.grid-container{
+    display: grid;
+    justify-content: center;
+}
+
+.item{
+    width: 30px;
+    height: 30px;
+    border-color: black;
+    border-style: solid;
+}
+
