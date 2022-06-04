@@ -8,11 +8,22 @@ function createGrit(n = 16){
         item.classList.add('class', `item`);
         container.appendChild(item);
     };
-    container.addEventListener('click', function(e){e.target.style.background = `rgb(${random255()},
-    ${random255()},${random255()})`})
+    
+    let squares = document.querySelectorAll(".item");
+    squares.forEach(square => {
+    square.addEventListener('mouseover', function(e){e.target.style.background = `rgb(${random255()},    ${random255()},${random255()})`})
+    });
+
+
+
+    //container.addEventListener('mouseover', function(e){e.target.style.background = `rgb(${random255()},    ${random255()},${random255()})`})
 }
 
 let container = document.querySelector('.grid-container');
 container.setAttribute('style', 'grid-template-columns: auto auto auto auto;');
 createGrit();
 
+/*let squares = document.querySelectorAll(".item");
+squares.forEach(square => {
+    square.addEventListener('mouseover', function(e){e.target.style.background = `rgb(${random255()},    ${random255()},${random255()})`})
+});*/
