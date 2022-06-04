@@ -11,6 +11,7 @@ function random255(){
 }
 
 function createGrit(n = 16){
+    n = n*n;
     for ( let i = 0; i <n; i++){
         let item = document.createElement('div');
         item.classList.add('class', `item`);
@@ -38,7 +39,6 @@ function press (){
 
 function columnGenerator(n = 16){
     let autoString = ""
-    n = Math.floor( n **.5) 
     for (i = 0; i < n; i++){
         autoString += ' auto ';
     }
