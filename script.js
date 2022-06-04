@@ -37,7 +37,7 @@ function press (){
     createGrit(n);
 }
 
-function columnGenerator(n){
+function columnGenerator(n = 16){
     let autoString = ""
     n = Math.floor( n **.5) 
     for (i = 0; i < n; i++){
@@ -54,7 +54,7 @@ let n;
 const container = document.querySelector('.grid-container');
 const pressMe = document.querySelector('.n-generator');
 pressMe.addEventListener('click', nValidation);
-container.setAttribute('style', 'grid-template-columns: auto auto auto auto;');
+container.setAttribute('style', `grid-template-columns:${columnGenerator(n)};`);
 createGrit(n);
 
 
