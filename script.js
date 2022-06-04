@@ -1,9 +1,10 @@
 function nValidation (){
-    let n2;
+    let n;
     do{
-    n2 = prompt("Chose a number up to 100")
-    } while (!(n > 0 || n < 100 || n == null || parseInt(n) == NaN)) //
-    return n2
+    n = prompt("Chose a number up to 100")
+    } while ((n < 0 || n > 100) || isNaN(n) )  // while needs to be fals
+
+    return n
 }
 
 function random255(){
@@ -31,16 +32,16 @@ function erase() {
 }
 
 function press (){
-    let n2 = nValidation();
+    nValidation();
     erase();
-    createGrit(n2);
+    createGrit(n);
 }
 
 
 /************************************functions above -************ */
 
 
-const n = 16;
+let n;
 const container = document.querySelector('.grid-container');
 
 const pressMe = document.querySelector('.n-generator');
@@ -51,4 +52,20 @@ createGrit(n);
 
 
 
+/*
+//////////////////
+let nArray = [-5, 150, 5, null, 'a', 'asdfZ', ""]
+console.log('Valor:, n,      , n < 0,     , n > 0,     , n!=null,     , (n < 0 || n > 100) && n != null)      && isNaN(n)')
+nArray.forEach(n => {
+    console.log ('Valor:', n,"     " , n < 0,"     ", n > 0,"        ", n!=null,
+    "             ", (n < 0 || n > 100) && n != null, "                      ",  isNaN(n) )
+})
 
+,"     "
+(n < 0 || n > 100) && n != null
+
+('Valor:', n , n < 0, n > 0, n!=null, (n < 0 || n > 100) && n != null && isNaN(n))
+
+
+
+a = prompt("ingrsa valores: -5, 5, 100, null, a, az, ")*/
