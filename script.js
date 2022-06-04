@@ -3,7 +3,6 @@ function nValidation (){
     do{
     n = prompt("Chose a number up to 100")
     } while ((n < 0 || n > 100) || isNaN(n) )  // while needs to be fals
-
     return n
 }
 
@@ -42,7 +41,6 @@ function columnGenerator(n = 16){
     n = Math.floor( n **.5) 
     for (i = 0; i < n; i++){
         autoString += ' auto ';
-        console.log(i)
     }
     return autoString;
 
@@ -53,8 +51,18 @@ function columnGenerator(n = 16){
 let n;
 const container = document.querySelector('.grid-container');
 const pressMe = document.querySelector('.n-generator');
-pressMe.addEventListener('click', nValidation);
+
+
 container.setAttribute('style', `grid-template-columns:${columnGenerator(n)};`);
 createGrit(n);
+
+pressMe.addEventListener('click', () => {
+    n = nValidation();
+    if (n != null){
+    erase()
+    container.setAttribute('style', `grid-template-columns:${columnGenerator(n)};`);
+    createGrit(n)
+    }
+  });
 
 
