@@ -37,35 +37,24 @@ function press (){
     createGrit(n);
 }
 
+function columnGenerator(n){
+    let autoString = ""
+    n = Math.floor( n **.5) 
+    for (i = 0; i < n; i++){
+        autoString += ' auto ';
+        console.log(i)
+    }
+    return autoString;
 
+}
 /************************************functions above -************ */
 
 
 let n;
 const container = document.querySelector('.grid-container');
-
 const pressMe = document.querySelector('.n-generator');
 pressMe.addEventListener('click', nValidation);
-
 container.setAttribute('style', 'grid-template-columns: auto auto auto auto;');
 createGrit(n);
 
 
-
-/*
-//////////////////
-let nArray = [-5, 150, 5, null, 'a', 'asdfZ', ""]
-console.log('Valor:, n,      , n < 0,     , n > 0,     , n!=null,     , (n < 0 || n > 100) && n != null)      && isNaN(n)')
-nArray.forEach(n => {
-    console.log ('Valor:', n,"     " , n < 0,"     ", n > 0,"        ", n!=null,
-    "             ", (n < 0 || n > 100) && n != null, "                      ",  isNaN(n) )
-})
-
-,"     "
-(n < 0 || n > 100) && n != null
-
-('Valor:', n , n < 0, n > 0, n!=null, (n < 0 || n > 100) && n != null && isNaN(n))
-
-
-
-a = prompt("ingrsa valores: -5, 5, 100, null, a, az, ")*/
