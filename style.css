@@ -1,3 +1,9 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
 
 .grid-container{
     display: grid;
@@ -9,5 +15,18 @@
     height: 30px;
     border-color: black;
     border-style: solid;
+    )
+}
+
+button{
+    height: 50px;
+    width: 100px;
+    background-color:azure;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    border-radius: 5%;
+    
+
+    
 }
 
