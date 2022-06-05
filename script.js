@@ -18,13 +18,6 @@ function createGrit(n = 16){
     for ( let i = 0; i <n; i++){
         let item = document.createElement('div');
         item.classList.add(`item`);
-        /*       
-        item.width = `${960/n**.5}px`;
-        item.height = `${960/n**.5}px`;
-        square.style.cssText = `width:${960/n**.5}; height: ${960/n**.5};`;
-        item.style.cssText = `width:${960/n**.5}px; height: ${960/n**.5}px;`; */
-         
-
         container.appendChild(item);
         
     };
@@ -47,32 +40,25 @@ function press (){
     createGrit(n);
 }
 
-function columnGenerator(n = 16){
-    let autoString = ""
-    for (i = 0; i < n; i++){
-        autoString += ' auto ';
-    }
-    return autoString;
 
-}
 /************************************functions above -************ */
 
 
-let n;
+let n = 16;
 const container = document.querySelector('.grid-container');
 const pressMe = document.querySelector('.n-generator');
 const black = document.querySelector('.black');
 let switchOn = 0;
 const eraser = document.querySelector('.erase');
 
-container.setAttribute('style', `grid-template-columns:${columnGenerator(n)};`);
+container.setAttribute('style', `grid-template-columns: repeat(${n}, 1fr); grid-template-rows: repeat(${n}, 1fr);`);
 createGrit(n);
 
 pressMe.addEventListener('click', () => {
     n = nValidation();
     if (n != null){
     erase()
-    container.setAttribute('style', `grid-template-columns:${columnGenerator(n)};`);
+    container.setAttribute('style', `grid-template-columns: repeat(${n}, 1fr); grid-template-rows: repeat(${n}, 1fr);`);
     createGrit(n)
     }
   });
