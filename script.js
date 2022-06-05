@@ -7,21 +7,31 @@ function nValidation (){
 }
 
 function random255(){
-    return Math.floor(Math.random()*256)
+
+if (switchOn == 0){    return Math.floor(Math.random()*256) }
+else if (switchOn == 1) {return 000;}
+
 }
 
 function createGrit(n = 16){
     n = n*n;
     for ( let i = 0; i <n; i++){
         let item = document.createElement('div');
-        item.classList.add('class', `item`);
+        item.classList.add(`item`);
+        /*       
+        item.width = `${960/n**.5}px`;
+        item.height = `${960/n**.5}px`;
+        square.style.cssText = `width:${960/n**.5}; height: ${960/n**.5};`;
+        item.style.cssText = `width:${960/n**.5}px; height: ${960/n**.5}px;`; */
+         
+
         container.appendChild(item);
         
     };
     let squares = document.querySelectorAll(".item");
     squares.forEach(square => {
     square.addEventListener('mouseover', function(e){e.target.style.background = `rgb(${random255()},    ${random255()},${random255()})`})
-    });
+});
 }
 
 function erase() {
@@ -51,7 +61,8 @@ function columnGenerator(n = 16){
 let n;
 const container = document.querySelector('.grid-container');
 const pressMe = document.querySelector('.n-generator');
-
+const black = document.querySelector('.black');
+let switchOn = 0;
 
 container.setAttribute('style', `grid-template-columns:${columnGenerator(n)};`);
 createGrit(n);
@@ -62,6 +73,16 @@ pressMe.addEventListener('click', () => {
     erase()
     container.setAttribute('style', `grid-template-columns:${columnGenerator(n)};`);
     createGrit(n)
+    }
+  });
+
+  black.addEventListener('click',()=>{
+    erase();
+    createGrit(n);
+    if (switchOn == 1){
+        switchOn = 0}
+    else {
+        switchOn = 1
     }
   });
 

@@ -7,7 +7,10 @@ body{
 
 .grid-container{
     display: grid;
+    width: 960px;
+    
     justify-content: center;
+    
 }
 
 .item{
@@ -15,7 +18,8 @@ body{
     height: 30px;
     border-color: black;
     border-style: solid;
-    )
+    border-width: thin;
+    
 }
 
 button{
@@ -25,7 +29,10 @@ button{
     align-items: flex-start;
     margin-bottom: 20px;
     border-radius: 5%;
- 
-   
+}
+/*
+.buttons{
+    display: flex;
+    gap: 30px;
 }
 
