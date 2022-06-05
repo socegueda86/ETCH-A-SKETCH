@@ -63,6 +63,7 @@ const container = document.querySelector('.grid-container');
 const pressMe = document.querySelector('.n-generator');
 const black = document.querySelector('.black');
 let switchOn = 0;
+const eraser = document.querySelector('.erase');
 
 container.setAttribute('style', `grid-template-columns:${columnGenerator(n)};`);
 createGrit(n);
@@ -76,14 +77,18 @@ pressMe.addEventListener('click', () => {
     }
   });
 
-  black.addEventListener('click',()=>{
-    erase();
-    createGrit(n);
+black.addEventListener('click',()=>{
+    
     if (switchOn == 1){
         switchOn = 0}
     else {
         switchOn = 1
     }
+});
+
+  eraser.addEventListener('click', ()=>{
+    erase();
+    createGrit(n);
   });
 
 

@@ -8,7 +8,6 @@ body{
 .grid-container{
     display: grid;
     width: 960px;
-    
     justify-content: center;
     
 }
@@ -23,14 +22,15 @@ body{
 }
 
 button{
-    height: 50px;
+    height: 75px;
     width: 100px;
     background-color:azure;
     align-items: flex-start;
     margin-bottom: 20px;
+    margin-top: 35px;
     border-radius: 5%;
 }
-/*
+
 .buttons{
     display: flex;
     gap: 30px;
