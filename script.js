@@ -80,9 +80,12 @@ pressMe.addEventListener('click', () => {
 black.addEventListener('click',()=>{
     
     if (switchOn == 1){
-        switchOn = 0}
+        switchOn = 0
+        black.textContent = "Black";
+    }
     else {
         switchOn = 1
+        black.textContent = "Colors";
     }
 });
 
