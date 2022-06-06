@@ -163,18 +163,24 @@ function fadeBlack (string2){
         
         let localCurrentFade = parseFloat(string2.split(',')[3].slice(0,-1).trim())
         localCurrentFade += .1;    
+        console.log( "first")
         return `rgba(0,0,0,${localCurrentFade})`
     }
 
     else if (string2 == ""){
+        console.log( "2nd")
         return `rgba(0,0,0,.1)`
     }
 
-    else if (string2 != 'rgba(0,0,0)' ){
+    else if (string2 != 'rgb(0, 0, 0)' ){
+        
+
+        console.log( string2)
         return 'rgba(0,0,0,.1)'
     }
 
     else if (string2.substr(0,4) == "rgb("){
+        console.log( "4th")
         return 'rgba(0,0,0)'
     }
 
